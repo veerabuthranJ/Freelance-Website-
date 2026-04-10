@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Freelancer Hiring App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header>
+      <h1>Freelancer Hiring Platform</h1>
+      <nav>
+        <button data-view="home">Home</button>
+        <button data-view="freelancer-register">Freelancer Register</button>
+        <button data-view="freelancer-login">Freelancer Login</button>
+        <button data-view="recruiter-register">Recruiter Register</button>
+        <button data-view="recruiter-login">Recruiter Login</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="view active">
+        <p>Welcome! Use the menu above to register or log in as a freelancer or recruiter.</p>
+      </section>
+
+      <section id="freelancer-register" class="view">
+        <h2>Freelancer Registration</h2>
+        <form id="freelancer-register-form">
+          <label>Name<input type="text" name="name" required /></label>
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Password<input type="password" name="password" required /></label>
+          <label>Phone<input type="text" name="phone" required /></label>
+          <label>Skills <small>(comma separated)</small><input type="text" name="skills" required /></label>
+          <label>Experience (years)<input type="number" name="experience" min="0" required /></label>
+          <label>Resume<input type="file" name="resume" accept=".pdf,.doc,.docx" required /></label>
+          <button type="submit">Register</button>
+          <p class="message" id="freelancer-register-message"></p>
+        </form>
+      </section>
+
+      <section id="freelancer-login" class="view">
+        <h2>Freelancer Login</h2>
+        <form id="freelancer-login-form">
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Password<input type="password" name="password" required /></label>
+          <button type="submit">Login</button>
+          <p class="message" id="freelancer-login-message"></p>
+        </form>
+      </section>
+
+      <section id="recruiter-register" class="view">
+        <h2>Recruiter Registration</h2>
+        <form id="recruiter-register-form">
+          <label>Name<input type="text" name="name" required /></label>
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Password<input type="password" name="password" required /></label>
+          <label>Company Name<input type="text" name="companyName" required /></label>
+          <label>Company Start Date<input type="date" name="companyStartDate" required /></label>
+          <label>Address<input type="text" name="address" required /></label>
+          <button type="submit">Register</button>
+          <p class="message" id="recruiter-register-message"></p>
+        </form>
+      </section>
+
+      <section id="recruiter-login" class="view">
+        <h2>Recruiter Login</h2>
+        <form id="recruiter-login-form">
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Password<input type="password" name="password" required /></label>
+          <button type="submit">Login</button>
+          <p class="message" id="recruiter-login-message"></p>
+        </form>
+      </section>
+
+      <section id="freelancer-dashboard" class="view">
+        <div class="dashboard-header">
+          <h2>Freelancer Dashboard</h2>
+          <button id="logout-button">Logout</button>
+        </div>
+        <div id="freelancer-profile" class="card"></div>
+        <div class="card">
+          <h3>Interview Invitations</h3>
+          <ul id="invitation-list"></ul>
+        </div>
+      </section>
+
+      <section id="recruiter-dashboard" class="view">
+        <div class="dashboard-header">
+          <h2>Recruiter Dashboard</h2>
+          <button id="logout-button-2">Logout</button>
+        </div>
+        <div id="recruiter-profile" class="card"></div>
+        <div class="card">
+          <h3>Search Freelancers by Skill</h3>
+          <form id="search-form">
+            <label>Skill<input type="text" id="search-skill" required /></label>
+            <button type="submit">Search</button>
+          </form>
+          <p class="message" id="search-message"></p>
+          <ul id="freelancer-results"></ul>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
